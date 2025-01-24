@@ -58,6 +58,12 @@ export default {
             <p class="font-bold">Reiki Estelar - PRATICANTE</p>
             <p>R$ 497,00</p>
         </div>
+        <button
+        type="submit"
+        class="bg-[#009d43] w-full text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
+        Comprar Agora
+      </button>
     </div>
     
 </template>

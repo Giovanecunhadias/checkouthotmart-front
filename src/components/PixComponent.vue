@@ -24,6 +24,7 @@
        
     </div>
     <div class="w-full flex flex-col text-black">
+            
             <hr class="w-[100%] border-[#707780/20]">
             <p class="text-[#707780] p-4">Detalhes da compra </p>
             <hr class="w-[100%] border-[#707780/20]">
@@ -32,8 +33,8 @@
                 <p>R$ 497,00</p>
             </div>
             
-
     </div>
+   
 </template>
 
 
