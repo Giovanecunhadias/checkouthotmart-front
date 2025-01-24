@@ -15,6 +15,11 @@ const router = createRouter({
       name: 'form',
       component: import (/* webpackChunkName: "form" */ '@/views/FormView.vue'),
     },
+    {
+      path: '/yampi',
+      name: 'yampi',
+      component: import (/* webpackChunkName: "yampi" */ '@/views/YampiView.vue'),
+    }
   ]
 })
 
