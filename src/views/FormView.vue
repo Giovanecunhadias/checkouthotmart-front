@@ -13,7 +13,10 @@ const option = ref(1)
       <div class="flex flex-col sm:flex-row mb-6">
         <div class="flex flex-col items-center sm:items-start mb-4 sm:mb-0">
           <img src="../assets/logotipo.jpg" width="100" height="100" alt="ggg" class="mb-4 sm:mb-0">
+          
         </div>
+        
+        
         <div class="flex flex-col ml-0 sm:ml-4 text-center sm:text-left">
           <h1 class="text-black font-bold text-xl sm:text-2xl">Reiki Estelar - PRATICANTE</h1>
           <p class="text-[#464b52] text-sm sm:text-base">Autor: Alryon</p>
@@ -22,6 +25,9 @@ const option = ref(1)
           <p class="text-[#355cc0] text-[0.7rem] sm:text-xs" v-if="option == 2 || option ==3 ">ou em 12 x de R$ 49,60 * no cartão</p>
           <p class="text-[#355cc0] text-[0.7rem] sm:text-xs" v-if="option ==1">Ou R$ 497,00 à vista</p>
         </div>
+      </div>
+      <div class="flex flex-col mb-4">
+        <hr>
       </div>
       <div class="mb-4">
         <label class="block text-[#32363b] text-sm mb-2" for="username"> Seu email </label>

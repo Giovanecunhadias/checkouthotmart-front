@@ -20,8 +20,8 @@ export default {
 }
 </script>
 <template>
-    
-    <div class="w-full text-black flex flex-col border border-1  shadow-sm mt-2">
+    <div class="flex flex-col gap-4">
+      <div class="w-full text-black flex flex-col border border-1  shadow-sm mt-2">
         <div class="flex flex-col w-full p-4">
             <input type="text" placeholder="Digite o número do seu CPF ou CNPJ" class="w-full border rounded-md border-[#707780] p-1">
             <p class="text-xs">Por exigência do Banco Central, o boleto precisa ter seu CPF/CNPJ.</p>
@@ -51,19 +51,26 @@ export default {
             
            
         </div>
-        <div class="w-full flex flex-col items-center justify-center px-5">
-            <hr class="border-[#707780/20]  w-full border-full">
-        </div> 
-        <div class="flex text-xs w-full p-4 justify-between">
-            <p class="font-bold">Reiki Estelar - PRATICANTE</p>
+        
+        
+        
+    </div>
+    <div class="flex flex-col gap-3">
+        
+          <hr class="border-[#707780/20]  w-full border-full">
+       
+          <div class="flex text-xs w-full p-4 justify-between text-black">
+            <p class="font-bold ">Reiki Estelar - PRATICANTE</p>
             <p>R$ 497,00</p>
         </div>
         <button
         type="submit"
         class="bg-[#009d43] w-full text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-      >
+        >
         Comprar Agora
       </button>
     </div>
+    </div>
     
+    <div class="flex flex-col"></div>
 </template>
