@@ -12,7 +12,20 @@ const option= ref(1)
   <head>
   </head>
   <div class="flex flex-col justify-center items-center w-full pt-8  ">
-    <form class="bg-white w-[45%] border border-1 px-8 pt-6 pb-8 mb-4">
+    <form class="bg-white w-[45%] border border-1 rounded-md px-8 pt-6 pb-8 mb-4">
+      <div class="flex flex-row">
+        <div class="flex flex-col">
+          <img src="../assets/logotipo.jpg" width="100" height="100" alt="ggg">
+        </div>
+        <div class="flex flex-col">
+          <h1 class="text-black font-bold">Reiki Estelar - PRATICANTE</h1>
+          <p class="text-[#464b52]">Autor: Alryon</p>
+          <p class="text-[#355cc0] font-bold text-2xl" v-if="option == 2 || option == 3">R$ 497,00</p>
+          <p class="text-[#355cc0] font-bold text-2xl" v-if="option == 1">12 x de R$ 49,60 *</p>
+          <p class="text-[#355cc0]  text-[0.7rem]" v-if="option == 2 || option ==3 ">ou em 12 x de R$ 49,60 * no cartão</p>
+          <p class="text-[#355cc0]  text-[0.7rem]" v-if="option ==1">Ou R$ 497,00 à vista</p>
+        </div>
+      </div>
       <div class="mb-4">
         <label class="block text-[#32363b] text-sm mb-2" for="username"> Seu email </label>
         <input

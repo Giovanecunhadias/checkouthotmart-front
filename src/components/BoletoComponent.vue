@@ -52,11 +52,11 @@ export default {
            
         </div>
         <div class="w-full flex flex-col items-center justify-center px-5">
-                <hr class="border-[#707780/20]  w-full border-full">
+            <hr class="border-[#707780/20]  w-full border-full">
         </div> 
         <div class="flex text-xs w-full p-4 justify-between">
-                <p class="font-bold">Reiki Estelar - PRATICANTE</p>
-                <p>R$ 497,00</p>
+            <p class="font-bold">Reiki Estelar - PRATICANTE</p>
+            <p>R$ 497,00</p>
         </div>
     </div>
     
