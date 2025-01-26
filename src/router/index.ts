@@ -19,7 +19,13 @@ const router = createRouter({
       path: '/yampi',
       name: 'yampi',
       component: import (/* webpackChunkName: "yampi" */ '@/views/YampiView.vue'),
+    },
+    {
+      path: '/adoreii',
+      name: 'adoreii',
+      component: import (/* webpackChunkName: "adoreii" */ '@/views/AdoreiiView.vue'),
     }
+
   ]
 })
 
