@@ -24,7 +24,13 @@ const router = createRouter({
       path: '/adoreii',
       name: 'adoreii',
       component: import (/* webpackChunkName: "adoreii" */ '@/views/AdoreiiView.vue'),
-    }
+    },
+    {
+      path:'/detalhesdopedido',
+      name:'detalhesdopedido',
+      component: import (/* webpackChunkName: "detalhesdopedido" */ '@/views/DetalhesDoPedidoView.vue'),
+    },
+
 
   ]
 })
