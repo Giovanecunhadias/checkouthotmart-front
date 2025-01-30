@@ -103,10 +103,10 @@
           <option value="">Opções de parcelas aqui</option>
         </select>
       </div>
-      
+
     </form>
 
-   
+
   </div>
   <div class="flex flex-col gap-4">
       <div class="w-full flex flex-col text-black">

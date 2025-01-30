@@ -13,7 +13,6 @@ const option = ref(1)
       <div class="flex flex-col sm:flex-row mb-6">
         <div class="flex flex-col items-center sm:items-start mb-4 sm:mb-0">
           <img src="../assets/logotipo.jpg" width="100" height="100" alt="ggg" class="mb-4 sm:mb-0">
-          
         </div>
         
         

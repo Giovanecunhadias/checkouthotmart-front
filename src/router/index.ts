@@ -30,6 +30,12 @@ const router = createRouter({
       name:'detalhesdopedido',
       component: import (/* webpackChunkName: "detalhesdopedido" */ '@/views/DetalhesDoPedidoView.vue'),
     },
+    {
+      path: '/polihousi',
+      name: 'polihousi',
+      component: import (/* webpackChunkName: "polihousi" */ '@/views/PolihousiView.vue'),
+    }
+
 
 
   ]
