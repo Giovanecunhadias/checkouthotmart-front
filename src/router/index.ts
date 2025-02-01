@@ -39,6 +39,12 @@ const router = createRouter({
       path: '/vega',
       name: 'vega',
       component: import (/* webpackChunkName: "vega" */ '@/views/VegaView.vue'),
+    },
+    {
+      path: '/cartx',
+      name: 'cartx',
+      component: import (/* webpackChunkName: "cartx" */ '@/views/CartxView.vue'),
+
     }
 
 

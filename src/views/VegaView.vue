@@ -9,7 +9,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
 const quantity = ref<number>(props.modelValue ?? 1);
 const min = props.min ?? 1;
 const max = props.max ?? 99;
