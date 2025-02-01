@@ -34,6 +34,11 @@ const router = createRouter({
       path: '/polihousi',
       name: 'polihousi',
       component: import (/* webpackChunkName: "polihousi" */ '@/views/PolihousiView.vue'),
+    },
+    {
+      path: '/vega',
+      name: 'vega',
+      component: import (/* webpackChunkName: "vega" */ '@/views/VegaView.vue'),
     }
 
 
