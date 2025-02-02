@@ -1,14 +1,29 @@
+<script lang="ts">
+import { ref } from 'vue'
+const option = ref(1)
+</script>
+
+
 <template>
   <div class="flex  h-full w-full justify-center items-center text-black">
-    <div class="flex flex-col py-6 w-[30vw]">
+    <div class="flex flex-col py-6 w-[35vw]">
       <form class="flex flex-col gap-2">
         <label class="font-bold" for="">INFORMAÇÕES PESSOAIS</label>
-        <input type="text" placeholder="E-mail *" class="w-full border-2 border-[#707780]/10 rounded-lg p-2">
-        <input class="w-full border-2 border-[#707780]/10 rounded-lg p-2" placeholder="Nome Completo *" type="text">
+        <input type="text" placeholder="E-mail *" class="w-full border-2 border-[#707780]/10 rounded-lg p-4">
+        <input class="w-full border-2 border-[#707780]/10 rounded-lg p-4" placeholder="Nome Completo *" type="text">
         <div class="flex flex-row justify-between">
           <input type="text" placeholder="Celular*" class="border-2 border-[#707780]/10 rounded-lg p-2">
-          <input type="text" placeholder="CPF*" class="border-2 border-[#707780]/10 rounded-lg p-2">
+          <input type="text" placeholder="CPF*" class="border-2 border-[#707780]/10 rounded-lg p-4">
         </div>
+        <label class="font-bold">QUER ALGO DE ESPECIAL NO SEU PEDIDO?</label>
+        <textarea name="" placeholder="Se você precisar de algo é só nos falar estamos aqui para atender" class="w-full border-2 border-[#707780]/10 rounded-lg p-4" id="" cols="40" rows="1"></textarea>
+        <label for="" class="font-bold">INFORMAÇÕES DE ENTREGA</label>
+        <p class="text-gray-500">Para onde dvemos entregar seu pedido?</p>
+        <input type="text" placeholder="CEP *" class="w-3/6 border-2 border-[#707780]/10 rounded-lg p-4">
+
+
+        <!--METODO DE PAGAMENTO-->
+        <div class="flex flex-col border rounded-xl"></div>
       </form>
     </div>
   </div>
