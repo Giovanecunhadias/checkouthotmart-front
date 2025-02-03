@@ -1,6 +1,16 @@
-<script lang="ts">
-import { ref } from 'vue'
+<script setup lang="ts">
+import { ref, watch } from 'vue'
 const option = ref(1)
+
+watch(option, (nValue)=>{
+  if(nValue == 2){
+    console.
+    log(nValue)
+  }
+  if(nValue ==1) {
+    console.log(nValue)
+  }
+})
 </script>
 
 
@@ -23,7 +33,18 @@ const option = ref(1)
 
 
         <!--METODO DE PAGAMENTO-->
-        <div class="flex flex-col border rounded-xl"></div>
+        <div class="flex flex-col border rounded-xl">
+          <div>
+            <div class="flex flex-col border rounded-xl p-4">
+          <label class="flex items-center gap-2">
+            <input v-model="option" type="radio" :value="1" name="payment"> Opção 1
+          </label>
+          <label class="flex items-center gap-2">
+            <input v-model="option" type="radio" :value="2" name="payment"> Opção 2
+          </label>
+        </div>
+          </div>
+        </div>
       </form>
     </div>
   </div>
