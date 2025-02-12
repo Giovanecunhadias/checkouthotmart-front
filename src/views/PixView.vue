@@ -1,70 +1,93 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
-    <!-- Logo -->
-    <div class="text-gray-700 uppercase p-4 text-start">LOGO</div>
+  <div class="min-h-screen bg-gray-200 flex flex-col">
+    
 
     <!-- Main Content -->
-    <div class="w-4/6 mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-24 h-screen items-center justify-center">
-        <!-- Left Column -->
-        <div class="col-span-2">
-          <!-- Title -->
-          <h1 class="text-2xl text-center text-black mb-4">Seu pedido está quase garantido...</h1>
+    <main class="flex-grow container mx-auto px-4 py-8 flex items-center justify-center">
+      <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
+        <h1 class="text-2xl font-bold text-center text-green-700 mb-6">Pagamento via PIX</h1>
 
-          <!-- Subtitle -->
-          <p class="text-gray-700 text-center mb-6">
-            Reservamos seu pedido, mas é por pouco tempo. <span class="font-semibold">14:39</span>
-          </p>
-          <p></p>
-
-          <!-- Status -->
-          <div class="bg-yellow-50 text-yellow-700 py-2 text-center mb-8">
-            Aguardando Pagamento ...
-          </div>
+        <!-- Order Details -->
+        <div class="bg-green-50 p-4 rounded-lg mb-6">
+          <h2 class="text-xl font-semibold text-green-700 mb-2">Detalhes do Pedido</h2>
+          <p class="text-gray-700">Total a Pagar: <span class="font-bold">R$ {{ orderTotal }}</span></p>
+          <p class="text-gray-700">Número do Pedido: #{{ orderNumber }}</p>
         </div>
 
-        <!-- Right Column -->
-        <div class="bg-white rounded-lg p-6 items shadow-sm pl-22">
-          <p class="text-gray-700 text-center mb-4">
-            Leia o QRCode abaixo para efetuar seu pagamento
-          </p>
+        <!-- QR Code -->
+        <div class="text-center mb-6">
+          <h3 class="text-lg font-semibold text-green-700 mb-4">Escaneie o QR Code para pagar</h3>
+          <img :src="qrCodeUrl" alt="QR Code" class="w-48 h-48 mx-auto mb-4" />
+        </div>
 
-          <!-- QR Code Image -->
-          <div class="flex justify-center mb-4">
-            <img src="" alt="QR Code" class="w-48 h-48" />
-          </div>
-
-          <!-- Price -->
-          <div class="text-center mb-6">
-            <p class="text-gray-700">Valor do Pix: <span class="font-semibold">1,19</span></p>
-          </div>
-
-          <!-- Alternative Payment Info -->
-          <div class="text-gray-600 text-sm mb-4">
-            Você também pode pagar escolhendo a opção Pix Copia e Cola no seu aplicativo de
-            pagamento ou Internet Banking (banco online). Neste caso, copie o código clicando no
-            botão abaixo:
-          </div>
-
-          <!-- Copy Button -->
-          <button
-            class="w-full py-2 px-4 border border-gray-300 rounded-md text-gray-600 flex items-center justify-center gap-2 hover:bg-gray-50"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-              <path
-                d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"
-              />
-            </svg>
-            COPIAR CÓDIGO
+        <!-- Copy PIX Code Button -->
+        <div class="text-center mb-6">
+          <p class="text-gray-600 mb-2">Ou copie o código PIX abaixo:</p>
+          <button @click="copyPixCode" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-200">
+            {{ copyButtonText }}
           </button>
         </div>
+
+        <!-- Timer -->
+        <div class="text-center">
+          <p class="text-gray-600">
+            Tempo restante para finalizar o pagamento:
+            <span class="font-bold text-green-600">{{ remainingTime }}</span>
+          </p>
+        </div>
       </div>
-    </div>
+    </main>
+
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const orderTotal = ref('157,99');
+const orderNumber = ref('123456');
+const remainingTime = ref('14:59');
+const qrCodeUrl = ref('/placeholder.svg?height=192&width=192');
+const copyButtonText = ref('Copiar Código PIX');
+
+const pixCode = 'seu-codigo-pix-aqui';
+
+let timer;
+
+onMounted(() => {
+  startTimer();
+});
+
+onUnmounted(() => {
+  clearInterval(timer);
+});
+
+function startTimer() {
+  const endTime = new Date().getTime() + 15 * 60 * 1000; // 15 minutes from now
+
+  timer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = endTime - now;
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    remainingTime.value = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      remainingTime.value = '00:00';
+    }
+  }, 1000);
+}
+
+function copyPixCode() {
+  navigator.clipboard.writeText(pixCode).then(() => {
+    copyButtonText.value = 'Código Copiado!';
+    setTimeout(() => {
+      copyButtonText.value = 'Copiar Código PIX';
+    }, 2000);
+  });
+}
+</script>
+
