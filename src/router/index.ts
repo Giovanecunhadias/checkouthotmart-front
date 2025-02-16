@@ -45,6 +45,11 @@ const router = createRouter({
       name: 'cartx',
       component: import (/* webpackChunkName: "cartx" */ '@/views/CartxView.vue'),
 
+    },
+    {
+      path: '/pedido',
+      name: 'pedido',
+      component: import (/* webpackChunkName: "pedido" */ '@/views/PedidoView.vue'),
     }
 
 
